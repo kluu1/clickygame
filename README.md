@@ -2,7 +2,7 @@
 A simple and fun memory game built with React.js. The goal is the select all 12 cards only once. The cards will reshuffle after each click.
 
 ## Screenshot
-![Alt text](screenshot.png?raw=true "ClickyGame")
+![Screenshot](./screenshot.png?raw=true "ClickyGame")
 
 ## How it play
 * Start the game by clicking on a card
