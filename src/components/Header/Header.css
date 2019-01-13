@@ -1,0 +1,8 @@
+.header-container {
+  padding: 0;
+  padding-top: 20px;
+  width: 100%;
+  background-image: url('./dark-triangles.png');
+  color: #fff;
+  height: 200px;
+}

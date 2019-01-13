@@ -1,26 +1,40 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Wrapper from './components/Wrapper/Wrapper';
+import Navbar from './components/Navbar/Navbar';
+import Header from './components/Header/Header';
+import FriendContainer from './components/FriendContainer/FriendContainer';
+import 'normalize.css';
 import './App.css';
 
 class App extends Component {
+  // Set initial state
+  state = {
+    count: 0,
+    highScore: 0
+  };
+
+  // Update current score
+  updateCurrentScore = newScore => {
+    this.setState({ count: newScore });
+  };
+
+  // Update high score
+  updateHighScore = newHighScore => {
+    if (newHighScore > this.state.highScore) {
+      this.setState({ highScore: newHighScore - 1 });
+    }
+  };
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Wrapper>
+        <Navbar score={this.state.count} highScore={this.state.highScore} />
+        <Header />
+        <FriendContainer
+          updateCurrentScore={this.updateCurrentScore}
+          updateHighScore={this.updateHighScore}
+        />
+      </Wrapper>
     );
   }
 }
